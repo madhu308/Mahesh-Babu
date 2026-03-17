@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding | Save the Date</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .font-cursive { font-family: 'Dancing Script', cursive; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-stone-50 font-sans text-stone-800">
+
+    <section class="h-screen flex flex-col items-center justify-center text-center bg-cover bg-center px-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');">
+        <h2 class="text-white text-2xl tracking-widest uppercase mb-4">We Are Getting Married</h2>
+        <h1 class="text-white text-7xl md:text-9xl font-cursive mb-6">Alex & Jordan</h1>
+        <p class="text-white text-xl md:text-2xl border-y border-white py-2 px-6">September 12, 2026</p>
+    </section>
+
+    <section class="py-16 bg-white text-center">
+        <h3 class="text-3xl font-cursive mb-8 text-stone-600">Counting Down the Days</h3>
+        <div id="countdown" class="flex justify-center gap-4 md:gap-10 text-stone-700">
+            <div class="flex flex-col"><span id="days" class="text-4xl font-bold">00</span><span class="text-sm uppercase">Days</span></div>
+            <div class="flex flex-col"><span id="hours" class="text-4xl font-bold">00</span><span class="text-sm uppercase">Hours</span></div>
+            <div class="flex flex-col"><span id="minutes" class="text-4xl font-bold">00</span><span class="text-sm uppercase">Mins</span></div>
+            <div class="flex flex-col"><span id="seconds" class="text-4xl font-bold">00</span><span class="text-sm uppercase">Secs</span></div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-stone-100 flex justify-center px-4">
+        <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-cursive text-center mb-6">Will You Attend?</h2>
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-4">
+                <input type="text" name="name" placeholder="Full Name" required class="w-full p-3 border border-stone-300 rounded focus:outline-stone-500">
+                <select name="attendance" class="w-full p-3 border border-stone-300 rounded focus:outline-stone-500">
+                    <option value="yes">Joyfully Accept</option>
+                    <option value="no">Regretfully Decline</option>
+                </select>
+                <textarea name="message" placeholder="Dietary requirements or song requests" class="w-full p-3 border border-stone-300 rounded h-32"></textarea>
+                <button type="submit" class="w-full bg-stone-800 text-white py-3 rounded hover:bg-stone-700 transition">Send RSVP</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-stone-400 text-sm">
+        Built with ❤️ for Alex & Jordan
+    </footer>
+
+    <script>
+        // Countdown Logic
+        const weddingDate = new Date("Sept 12, 2026 15:00:00").getTime();
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+    </script>
+</body>
+                                                                                     </html>
+                                                                                       
